@@ -5,8 +5,8 @@ module seq_detect_moore(
 	input 			i_rstn
 );
 
-	reg		[2:0]	cState;
-	reg 	[2:0]   nState;
+	reg		[2:0]	cState;		// current state 
+	reg 	[2:0]   nState;		// next state 
 	reg 			seq;
 
 	// States 
