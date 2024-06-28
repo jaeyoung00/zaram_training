@@ -1,0 +1,29 @@
+$date
+	Thu Jun 27 16:41:15 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module op_tb $end
+$var reg 4 ! a [3:0] $end
+$var reg 4 " b [3:0] $end
+$var reg 256 # vcd_file [255:0] $end
+$var integer 32 $ i [31:0] $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 $
+b1011100010111101110110011000110110010000101111011011110111000000101110011101100110001101100100 #
+b100 "
+b1001 !
+$end
+#10
+b11 "
+b0 !
+b1 $
+#20
+b10 $
