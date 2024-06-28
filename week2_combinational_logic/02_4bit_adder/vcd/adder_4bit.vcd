@@ -1,0 +1,61 @@
+$date
+	Mon Jun 24 10:40:21 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module adder_4bit_tb $end
+$var wire 4 ! o_s [3:0] $end
+$var wire 1 " o_c $end
+$var reg 4 # i_a [3:0] $end
+$var reg 4 $ i_b [3:0] $end
+$var reg 1 % i_c $end
+$var reg 5 & sum [4:0] $end
+$var reg 256 ' vcd_file [255:0] $end
+$var integer 32 ( i [31:0] $end
+$scope module u_adder_4bit_dataflow $end
+$var wire 4 ) i_a [3:0] $end
+$var wire 4 * i_b [3:0] $end
+$var wire 1 % i_c $end
+$var wire 4 + o_s [3:0] $end
+$var wire 1 " o_c $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b101 +
+b1000 *
+b1 )
+b0 (
+b10111000101111011101100110001101100100001011110110000101100100011001000110010101110010010111110011010001100010011010010111010000101110011101100110001101100100 '
+b1010 &
+1%
+b1000 $
+b1 #
+0"
+b101 !
+$end
+#100
+b1 (
+#200
+b10 (
+#300
+b11 (
+#400
+b100 (
+#500
+b101 (
+#600
+b110 (
+#700
+b111 (
+#800
+b1000 (
+#900
+b1001 (
+#1000
+b1010 (

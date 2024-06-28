@@ -1,0 +1,129 @@
+$date
+	Thu Jun 20 19:02:30 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module mux2_tb $end
+$var wire 4 ! o_out_if [3:0] $end
+$var wire 4 " o_out_case [3:0] $end
+$var wire 4 # o_out_assign [3:0] $end
+$var reg 4 $ i_in0 [3:0] $end
+$var reg 4 % i_in1 [3:0] $end
+$var reg 4 & i_sel [3:0] $end
+$var reg 256 ' vcd_file [255:0] $end
+$var integer 32 ( i [31:0] $end
+$scope module u_mux2_assign $end
+$var wire 4 ) i_in0 [3:0] $end
+$var wire 4 * i_in1 [3:0] $end
+$var wire 4 + i_sel [3:0] $end
+$var wire 4 , o_out [3:0] $end
+$upscope $end
+$scope module u_mux2_case $end
+$var wire 4 - i_in0 [3:0] $end
+$var wire 4 . i_in1 [3:0] $end
+$var wire 4 / i_sel [3:0] $end
+$var reg 4 0 o_out [3:0] $end
+$upscope $end
+$scope module u_mux2_if $end
+$var wire 4 1 i_in0 [3:0] $end
+$var wire 4 2 i_in1 [3:0] $end
+$var wire 4 3 i_sel [3:0] $end
+$var reg 4 4 o_out [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 4
+b0 3
+b100 2
+b0 1
+b0 0
+b0 /
+b100 .
+b0 -
+b100 ,
+b0 +
+b100 *
+b0 )
+b0 (
+b10111000101111011101100110001101100100001011110110110101110101011110000011001000101110011101100110001101100100 '
+b0 &
+b100 %
+b0 $
+b100 #
+b0 "
+b0 !
+$end
+#100
+b10 #
+b10 ,
+b10 %
+b10 *
+b10 .
+b10 2
+b1 (
+#200
+b0 #
+b0 ,
+b0 %
+b0 *
+b0 .
+b0 2
+b10 (
+#300
+b1 #
+b1 ,
+b1 %
+b1 *
+b1 .
+b1 2
+b11 (
+#400
+b100 #
+b100 ,
+b100 %
+b100 *
+b100 .
+b100 2
+b100 (
+#500
+b110 #
+b110 ,
+b110 %
+b110 *
+b110 .
+b110 2
+b101 (
+#600
+b1 #
+b1 ,
+b1 %
+b1 *
+b1 .
+b1 2
+b110 (
+#700
+b0 #
+b0 ,
+b0 %
+b0 *
+b0 .
+b0 2
+b111 (
+#800
+b100 #
+b100 ,
+b100 %
+b100 *
+b100 .
+b100 2
+b1000 (
+#900
+b1001 (
+#1000
+b1010 (
