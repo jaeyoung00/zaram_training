@@ -1,6 +1,7 @@
 # Carry Lookahead Adder 
 
 ## Curcuit diagram 
+![image](https://github.com/jaeyoung00/zaram_training/assets/77602073/4daa64cc-c866-42f1-ab46-e6afec395b07)
 
 ## Principle
 - P(propagation) = A^B
@@ -216,7 +217,8 @@ endmodule
   - i_A = 32'h7338_8A45
   - i_B = 32'hEA68_2531
   - o_SUM = 32'h5DA0_AF76
-    - 32bit_cla ==> no err
+   
+  ==> 32bit_cla ==> no err
 
   
-![Waveform](./vcd/adder.vcd)
+![Waveform](./vcd/cla.png)
