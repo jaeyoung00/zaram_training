@@ -1,6 +1,6 @@
 # FSM - traffic light controller 
 ## Curcuit diagram
-
+![image](https://github.com/jaeyoung00/zaram_training/assets/77602073/4cb095ed-9256-4ec8-ae0b-aca1aa1752d0)
 
 ## Condition
 - P = 1 : enter parade mode & bravado Blvd light stays GREEN
@@ -307,6 +307,7 @@ endmodule
 ```
 
 ## Simulation Results
+![image](https://github.com/jaeyoung00/zaram_training/assets/77602073/09a13645-d27c-4567-a3bf-8b0ce0213d84)
 
 - @30sec
   - LA : GREEN(00)
