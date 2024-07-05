@@ -51,7 +51,6 @@ module traffic_light_controller_tb;
 	integer i;
 	initial begin 
 		init();
-	//		for(i=0; i<`SIMCYCLE; i++) begin
 				@(posedge c_clk);
 				#10;
 				c_rstn = 1;
@@ -87,7 +86,6 @@ module traffic_light_controller_tb;
 			
 				@(posedge c_clk); 
 				#10;
-	//		end
 			$finish;
 		end 
 		
