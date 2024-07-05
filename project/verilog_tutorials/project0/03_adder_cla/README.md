@@ -216,8 +216,7 @@ endmodule
   - i_A = 32'h7338_8A45
   - i_B = 32'hEA68_2531
   - o_SUM = 32'h5DA0_AF76
-   
-  ==> 32bit_cla ==> no err
+    - 32bit_cla ==> no err
 
   
 ![Waveform](./vcd/adder.vcd)
