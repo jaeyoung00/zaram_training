@@ -1,7 +1,7 @@
 # Shift Register 
 
 ## Curcuit diagram 
-
+![image](https://github.com/jaeyoung00/zaram_training/assets/77602073/e84892c0-5cae-4a71-8bf8-3a022d0b5296)
 
 ## DUT
 ```
