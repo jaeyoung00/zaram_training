@@ -142,6 +142,4 @@ module exten_sram
 		.i_clk				(i_clk				),
 		.o_data				(o_data[31:0]		)
 	);
-
-
 endmodule
