@@ -29,11 +29,6 @@ module cla_4bit(
 	wire [3:0] g;
 	wire [3:0] p;
 	wire [3:0] c;
-//	wire  		 pp;
-//	wire  		 gg;
-
-//	assign pp = p[3] & p[2] & p[1] & p[0];
-//	assign gg = g[3] | (p[3]&g[2]) | (p[3]&p[2]&g[1]) | (p[3]&p[2]&p[1]&g[0]);
 		
 	full_adder u_full_adder0(.a(a[0]), .b(b[0]), .ci(cin),  .sum(s[0]), .p(p[0]), .g(g[0]));
 	full_adder u_full_adder1(.a(a[1]), .b(b[1]), .ci(c[0]), .sum(s[1]), .p(p[1]), .g(g[1]));
@@ -42,8 +37,6 @@ module cla_4bit(
 		
 	cla_block u_cla_block(.g(g), .p(p), .ci(cin), .c(c), .cout(cout));
 	
-//	assign cout = c[3];	
-
 endmodule 
 
 module full_adder(
@@ -77,9 +70,6 @@ module cla_block(
 	assign c[1] = g[1] || (p[1] && c[0]);
 	assign c[2] = g[2] || (p[2] && c[1]);
 	assign c[3] = g[3] || (p[3] && c[2]);
- 	//assign c[1] = g[1]|(p[1]&g[0])|(p[1]&p[0]&ci);
- 	//assign c[2] = g[2]|(p[2]&g[1])|(p[2]&p[1]&g[0])|(p[2]&p[1]&p[0]&ci);
- 	//assign c[3] = g[3]|(p[3]&g[2])|(p[3]&p[2]&g[1])|(p[3]&p[2]&p[1]&g[0])|(p[3]&p[2]&p[1]&p[0]&ci);
 	
 	assign cout = gg || (pp && ci);
 
