@@ -123,4 +123,4 @@ endmodule
 
 - Binary_b2g == Binary_original --> equal = 1
 
-![Waveform](./home/jylee/zaram_training/project/verilog_tutorials/project0/00_gray_code_converter/vcd/graycode.png)
+![Waveform](./vcd/graycode.png)
