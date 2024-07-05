@@ -1,6 +1,6 @@
 # ALU
-## Curcuit diagram 
-
+## Curcuit diagram
+![image](https://github.com/jaeyoung00/zaram_training/assets/77602073/6b47e2ad-3a30-42ec-867c-f0682b32c92e)
 
 ## Using modules 
 - 2to1 MUX
