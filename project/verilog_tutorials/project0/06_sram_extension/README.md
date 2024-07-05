@@ -3,10 +3,10 @@
 ## Extension 
 - SRAM unit : 4bit adder & 32bit I/O data  ==> 6bit adder & 64bit I/O data
   - 2bit address(SRAM select) -> 00,01,10,11
-  - 00 : data[63:32], data[31:0]
-  - 01 : data[63:32], data[31:0]
-  - 10 : data[63:32], data[31:0]
-  - 11 : data[63:32], data[31:0]
+  - 00 : sram0, sram1 ==> data[63:32], data[31:0]
+  - 01 : sram2, sram3 ==> data[63:32], data[31:0]
+  - 10 : sram4, sram5 ==> data[63:32], data[31:0]
+  - 11 : sram6, sram7 ==> data[63:32], data[31:0]
 
 ## DUT - SRAM
 ```
