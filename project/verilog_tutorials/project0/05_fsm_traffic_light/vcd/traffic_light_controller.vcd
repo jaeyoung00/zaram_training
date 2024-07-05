@@ -1,0 +1,137 @@
+$date
+	Thu Jul  4 18:25:44 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module traffic_light_controller_tb $end
+$var wire 2 ! c_LB [1:0] $end
+$var wire 2 " c_LA [1:0] $end
+$var reg 1 # c_TA $end
+$var reg 1 $ c_TB $end
+$var reg 1 % c_clk $end
+$var reg 1 & c_p $end
+$var reg 1 ' c_r $end
+$var reg 1 ( c_rstn $end
+$var reg 256 ) vcd_file [255:0] $end
+$scope module u_traffic_light_controller $end
+$var wire 1 # c_TA $end
+$var wire 1 $ c_TB $end
+$var wire 1 % c_clk $end
+$var wire 1 & c_p $end
+$var wire 1 ' c_r $end
+$var wire 1 ( c_rstn $end
+$var wire 1 * mode_M $end
+$var wire 2 + c_LB [1:0] $end
+$var wire 2 , c_LA [1:0] $end
+$scope module u_lights_FSM $end
+$var wire 1 # TA $end
+$var wire 1 $ TB $end
+$var wire 1 % lights_clk $end
+$var wire 1 ( lights_rstn $end
+$var wire 1 * lights_M $end
+$var reg 2 - LA [1:0] $end
+$var reg 2 . LB [1:0] $end
+$var reg 2 / lights_cstate [1:0] $end
+$var reg 2 0 lights_nstate [1:0] $end
+$upscope $end
+$scope module u_mode_FSM $end
+$var wire 1 & P $end
+$var wire 1 ' R $end
+$var wire 1 % mode_clk $end
+$var wire 1 ( mode_rstn $end
+$var reg 1 * mode_M $end
+$var reg 2 1 mode_cstate [1:0] $end
+$var reg 2 2 mode_nstate [1:0] $end
+$upscope $end
+$upscope $end
+$scope task init $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 2
+b0 1
+b1 0
+b0 /
+b11 .
+b0 -
+b0 ,
+b11 +
+0*
+b111011001100011011001000010111101110100011100100110000101100110011001100110100101100011010111110110110001101001011001110110100001110100010111110110001101101111011011100111010001110010011011110110110001101100011001010111001000101110011101100110001101100100 )
+0(
+0'
+0&
+0%
+0$
+0#
+b0 "
+b11 !
+$end
+#10
+1%
+#20
+b0 0
+b1 2
+1#
+1&
+1(
+0%
+#30
+1*
+b1 1
+1%
+#40
+b1 0
+b0 2
+1$
+1'
+0#
+0&
+0%
+#50
+b1 "
+b1 ,
+b1 -
+b10 0
+0*
+b1 /
+b0 1
+1%
+#60
+b1 2
+0$
+0'
+1#
+1&
+0%
+#70
+1*
+b0 !
+b0 +
+b0 .
+b11 "
+b11 ,
+b11 -
+b10 0
+b1 1
+b10 /
+1%
+#80
+b0 2
+1$
+1'
+0#
+0&
+0%
+#90
+0*
+b0 1
+1%
+#100
+0%

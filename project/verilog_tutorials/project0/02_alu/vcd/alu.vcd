@@ -1,0 +1,260 @@
+$date
+	Tue Jul  2 13:35:21 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module alu_tb $end
+$var wire 32 ! alu_out [31:0] $end
+$var reg 32 " A [31:0] $end
+$var reg 32 # B [31:0] $end
+$var reg 3 $ alu_F [2:0] $end
+$var reg 32 % alu_out_task [31:0] $end
+$var reg 1 & clk $end
+$var reg 256 ' vcd_file [255:0] $end
+$scope module u_ALU $end
+$var wire 32 ( A [31:0] $end
+$var wire 32 ) B [31:0] $end
+$var wire 3 * alu_F [2:0] $end
+$var wire 32 + alu_out [31:0] $end
+$var wire 32 , not_B [31:0] $end
+$var wire 32 - or_out [31:0] $end
+$var wire 32 . mux4_out [31:0] $end
+$var wire 32 / mux2_out [31:0] $end
+$var wire 32 0 and_out [31:0] $end
+$var wire 32 1 adder_sum [31:0] $end
+$var wire 1 2 adder_cout $end
+$var wire 32 3 R [31:0] $end
+$scope module u_AND $end
+$var wire 32 4 AND_A [31:0] $end
+$var wire 32 5 and_out [31:0] $end
+$var wire 32 6 AND_B [31:0] $end
+$upscope $end
+$scope module u_MUX_2to1 $end
+$var wire 32 7 B [31:0] $end
+$var wire 1 8 mux2_F $end
+$var wire 32 9 not_B [31:0] $end
+$var wire 32 : mux2_out [31:0] $end
+$upscope $end
+$scope module u_MUX_4to1 $end
+$var wire 32 ; O [31:0] $end
+$var wire 32 < R [31:0] $end
+$var wire 2 = mux4_F [1:0] $end
+$var wire 32 > mux4_out [31:0] $end
+$var wire 32 ? Q [31:0] $end
+$var wire 32 @ P [31:0] $end
+$upscope $end
+$scope module u_OR $end
+$var wire 32 A OR_A [31:0] $end
+$var wire 32 B OR_B [31:0] $end
+$var wire 32 C or_out [31:0] $end
+$upscope $end
+$scope module u_adder $end
+$var wire 32 D adder_A [31:0] $end
+$var wire 32 E adder_B [31:0] $end
+$var wire 1 F adder_F $end
+$var wire 32 G adder_sum [31:0] $end
+$var wire 1 2 adder_cout $end
+$upscope $end
+$upscope $end
+$scope task add_func $end
+$var reg 32 H A [31:0] $end
+$var reg 32 I B [31:0] $end
+$var reg 32 J Y [31:0] $end
+$upscope $end
+$scope task and_bar_func $end
+$var reg 32 K A [31:0] $end
+$var reg 32 L B [31:0] $end
+$var reg 32 M Y [31:0] $end
+$upscope $end
+$scope task and_func $end
+$var reg 32 N A [31:0] $end
+$var reg 32 O B [31:0] $end
+$var reg 32 P Y [31:0] $end
+$upscope $end
+$scope task init_func $end
+$upscope $end
+$scope task not_use $end
+$var reg 32 Q A [31:0] $end
+$var reg 32 R B [31:0] $end
+$var reg 32 S Y [31:0] $end
+$upscope $end
+$scope task or_bar_func $end
+$var reg 32 T A [31:0] $end
+$var reg 32 U B [31:0] $end
+$var reg 32 V Y [31:0] $end
+$upscope $end
+$scope task or_func $end
+$var reg 32 W A [31:0] $end
+$var reg 32 X B [31:0] $end
+$var reg 32 Y Y [31:0] $end
+$upscope $end
+$scope task slt_func $end
+$var reg 32 Z A [31:0] $end
+$var reg 32 [ B [31:0] $end
+$var reg 32 \ Y [31:0] $end
+$upscope $end
+$scope task sub_func $end
+$var reg 32 ] A [31:0] $end
+$var reg 32 ^ B [31:0] $end
+$var reg 32 _ Y [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx _
+bx ^
+bx ]
+bx \
+bx [
+bx Z
+bx Y
+bx X
+bx W
+b11111111111111111111111111111111 V
+b0 U
+b0 T
+bx S
+bx R
+bx Q
+bx P
+bx O
+bx N
+bx M
+bx L
+bx K
+bx J
+bx I
+bx H
+b0 G
+0F
+b0 E
+b0 D
+b0 C
+b0 B
+b0 A
+b0 @
+b0 ?
+b0 >
+b0 =
+b0 <
+b0 ;
+b0 :
+b11111111111111111111111111111111 9
+08
+b0 7
+b0 6
+b0 5
+b0 4
+b0 3
+02
+b0 1
+b0 0
+b0 /
+b0 .
+b0 -
+b11111111111111111111111111111111 ,
+b0 +
+b0 *
+b0 )
+b0 (
+b101110001011110111011001100011011001000010111101100001011011000111010100101110011101100110001101100100 '
+0&
+b11111111111111111111111111111111 %
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#10
+1&
+#20
+0&
+#30
+1&
+#40
+0&
+#50
+1&
+#60
+0&
+#70
+1&
+#80
+0&
+#90
+1&
+#100
+0&
+#110
+b1 3
+b1 <
+b11111111111111111111111111111110 -
+b11111111111111111111111111111110 @
+b11111111111111111111111111111110 C
+b11111111111111111111111111111111 1
+b11111111111111111111111111111111 ?
+b11111111111111111111111111111111 G
+18
+1F
+b1 %
+b1 Y
+b1 X
+b0 W
+b11111111111111111111111111111110 ,
+b11111111111111111111111111111110 9
+b11111111111111111111111111111110 /
+b11111111111111111111111111111110 6
+b11111111111111111111111111111110 :
+b11111111111111111111111111111110 B
+b11111111111111111111111111111110 E
+1&
+b100 $
+b100 *
+b1 #
+b1 )
+b1 7
+#120
+0&
+#130
+1&
+#140
+0&
+#150
+1&
+#160
+0&
+#170
+1&
+#180
+0&
+#190
+1&
+#200
+0&
+#210
+1&
+#220
+0&
+#230
+1&
+#240
+0&
+#250
+1&
+#260
+0&
+#270
+1&
+#280
+0&
+#290
+1&
+#300
+0&
+#310
+1&
