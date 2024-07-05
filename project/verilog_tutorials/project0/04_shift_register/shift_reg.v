@@ -147,9 +147,6 @@ module shift_reg(
 		.ff_Sin				(mux_out[7]			),
 		.ff_out				(shift_Q[7]			)
 	);
-
-
 			assign shift_Sout = shift_Q[7];
-
 endmodule
 
