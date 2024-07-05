@@ -3,6 +3,9 @@
 
 - k : rotate amount
 
+## Curcuit diagram
+![image](https://github.com/jaeyoung00/zaram_training/assets/77602073/f17966b8-e890-485f-8d8c-79e357d56cc5)
+
 ## DUT
 ```
 module barrel_shifter(
