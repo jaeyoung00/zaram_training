@@ -336,4 +336,4 @@ endmodule
 - ASYNC : signal RD --> o_data change
   (no wait posedge i_clk) 
 
-![waveform](./vcd/exten_sram.png)
+![waveform](./vcd/sram.png)

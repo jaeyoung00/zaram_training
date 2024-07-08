@@ -94,10 +94,10 @@ module exten_sram_tb;
 		init();
 		#(4*1000/`CLKFREQ);
 
-		for(i=0; i<2**5; i++) begin
+		for(i=0; i<2**6; i++) begin
 			memWR(i, i);
 		end
-		for(i=0; i<2**5; i++) begin
+		for(i=0; i<2**6; i++) begin
 			memRD(i);
 		end
 		#(1000/`CLKFREQ);
