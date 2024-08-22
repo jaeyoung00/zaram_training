@@ -5,13 +5,13 @@
 module pipe_ctrl
 (
 	output reg 			o_ctrl_RegWriteD,
-	output reg 	[1:0]	o_ctrl_ResultSrcD,
+	output reg 			o_ctrl_ResultSrcD,
 	output reg 			o_ctrl_MemWriteD,
-	output reg 			o_ctrl_JumpD,
+	output reg  [1:0]	o_ctrl_JumpD,
 	output reg 			o_ctrl_BranchD,
-	output reg 	[2:0]	o_ctrl_ALUControlD,
+	output reg 	[3:0]	o_ctrl_ALUControlD,
 	output reg 			o_ctrl_ALUSrcD,
-	output reg 	[1:0]	o_ctrl_ImmSrcD,
+	output reg 	[2:0]	o_ctrl_ImmSrcD,
 	output reg 	[3:0]	o_ctrl_mem_byte_sel,
 	output reg  [1:0]	o_ctrl_MUX_selD,
 
@@ -32,14 +32,21 @@ module pipe_ctrl
 	// ResultSrcD
 	always @(*) begin 
 		case(i_ctrl_op)
-			`OPCODE_I_LOAD	: 	o_ctrl_ResultSrcD 	= `SRC_RD_DME;	// 2'b01
-			`OPCODE_J_JAL	,
-			`OPCODE_I_JALR	: 	o_ctrl_ResultSrcD	= `SRC_RD_PC4;	// 2'b10
-			`OPCODE_U_LUI	: 	o_ctrl_ResultSrcD	= `SRC_RD_IMM;	// 2'b11
-			default			: 	o_ctrl_ResultSrcD	= `SRC_RD_ALU; 	// 2'b00 	// alu, auipc
+			`OPCODE_I_LOAD	: 	o_ctrl_ResultSrcD 	= 1'b0;		
+			default			: 	o_ctrl_ResultSrcD	= 1'b1; 	 	
 		endcase 
 	end 
 	
+	always @(*) begin 
+		case(i_ctrl_op)
+			`OPCODE_U_LUI	: 	o_ctrl_MUX_selD		= 2'b01;
+			`OPCODE_U_AUIPC	:	o_ctrl_MUX_selD		= 2'b10;
+			`OPCODE_J_JAL	,
+			`OPCODE_I_JALR	: 	o_ctrl_MUX_selD		= 2'b11;
+		default				: 	o_ctrl_MUX_selD		= 2'b00;
+	endcase
+end 
+
 	// MemWriteD
 	always @(*) begin 
 		case(i_ctrl_op)
@@ -51,9 +58,9 @@ module pipe_ctrl
 	// JumpD 
 	always @(*) begin
 		case(i_ctrl_op)
-			`OPCODE_J_JAL   ,	
-			`OPCODE_I_JALR	: 	o_ctrl_JumpD	= 	1'b1;
-			default			: 	o_ctrl_JumpD	= 	1'b0;
+			`OPCODE_J_JAL   :	o_ctrl_JumpD	=   2'b01;
+			`OPCODE_I_JALR	: 	o_ctrl_JumpD	= 	2'b10;
+			default			: 	o_ctrl_JumpD	= 	2'b00;
 		endcase 
 	end 
 
@@ -143,7 +150,7 @@ module pipe_ctrl
 `ifdef DEBUG
 	reg [8*32-1:0] DEBUG_INSTR;
 	always @(*) begin 
-		case(i_ctrl_opcode) 
+		case(i_ctrl_op) 
 			`OPCODE_R_OP		: begin
 				case(i_ctrl_funct3)
 					`FUNCT3_ALU_ADD_SUB : DEBUG_INSTR = i_ctrl_funct7_5b ? "sub" : "add";

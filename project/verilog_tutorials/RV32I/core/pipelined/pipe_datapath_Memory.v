@@ -11,30 +11,32 @@ module pipe_datapath_Memory
 (
 	output 		[`XLEN-1:0]				o_dp_dmem_RD,
 	output 		[`XLEN-1:0]				o_dp_4to1muxM,
+	output 		[`XLEN/8-1:0]			o_mem_byte_sel,
 
+	input								i_clk,
+	input								i_rstn,
 	input 		[`XLEN-1:0]				i_dp_ALUResultM,   // 14bit
 	input		[`XLEN-1:0]				i_dp_WriteDataM,
 	input 		[`XLEN-1:0]				i_dp_ExtImmE,
 	input 		[`XLEN-1:0]				i_dp_PCPlus4M, 
 	input 		[`XLEN-1:0]	 			i_dp_PCPlusImm,
 	input 			  [1:0]				o_MUX_selM,
-	input								i_clk,
 	input								i_dp_MemWriteM,
-	input 		[3:0]					i_dp_mem_byte_sel
+	input 		[`XLEN/8-1:0]			mem_byte_selM
 );
 
 	wire 	[(4*`XLEN)-1:0]		   mux_concat_4to1;
-	assign mux_concat_4to1	= {i_dp_ALUResultM, i_dp_ExtImmE, i_dp_PCPlus4M, i_dp_PCPlusImm};
+	assign mux_concat_4to1	=	 {i_dp_PCPlus4M, i_dp_PCPlusImm, i_dp_ExtImmE, i_dp_ALUResultM};
 
 
 	riscv_dmem
 	u_riscv_dmem(
 		.o_dmem_data		(o_dp_dmem_RD		),
 		.i_dmem_data		(i_dp_WriteDataM	),
-		.i_dmem_addr		(i_dp_ALUResultM[`DMEM_ADDR_BIT-3:0]),
-		.i_dmem_byte_sel	(i_dp_mem_byte_sel	),
+		.i_dmem_addr		(i_dp_ALUResultM[`DMEM_ADDR_BIT:2]),
+		.i_dmem_byte_sel	(mem_byte_selM		),
 		.i_dmem_wr_en		(i_dp_MemWriteM		),
-		.i_clk				(i_clk			)
+		.i_clk				(i_clk				)
 	);
 
 	riscv_mux

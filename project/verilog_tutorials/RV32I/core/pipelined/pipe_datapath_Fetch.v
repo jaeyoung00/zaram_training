@@ -14,19 +14,23 @@ module pipe_datapath_Fetch
 	output		[`XLEN-1:0]		o_dp_imem_RD,
 	output 		[`XLEN-1:0]		o_dp_PCF,
 	output 		[`XLEN-1:0]		o_dp_PCPlus4F,
-	output 		[`XLEN-1:0]		o_dp_ALUF,
-	input 		[`XLEN-1:0]		i_dp_PCPlus4F,
-	input 		[`XLEN-1:0]		PCTargetE,
+
 	input 						i_clk,
 	input 						i_rstn,
+	input 		[`XLEN-1:0]		i_dp_ALUF,
+	input 		[`XLEN-1:0]		PCTargetE,
 	input 		[1:0]			i_PCSrcE
 );
 
 	wire 		[`XLEN-1:0]		PCFF;
 	wire 		[`XLEN-1:0]		PCF;
+	wire 		[`XLEN-1:0]		dp_PCPlus4F;
 	wire 		[(3*`XLEN)-1:0]	mux_concat_pc;
-	assign 		mux_concat_pc	=	{i_dp_PCPlus4F, PCTargetE, o_dp_ALUF};
+	wire 		StallF;
 
+	assign 		mux_concat_pc	=	{i_dp_ALUF , PCTargetE, dp_PCPlus4F};
+	
+	assign		o_dp_PCF = PCF;
 
 	riscv_adder
 	u_riscv_adder(
@@ -38,8 +42,8 @@ module pipe_datapath_Fetch
 	riscv_imem
 	u_riscv_imem(
 		.o_imem_data		(o_dp_imem_RD		),
-		.i_imem_addr		(PCF[13:0]			),
-		.i_clk				(i_clk		)
+		.i_imem_addr		(PCF[`IMEM_ADDR_BIT:2]),
+		.i_clk				(i_clk				)
 	);
 
 
@@ -50,9 +54,9 @@ module pipe_datapath_Fetch
 	u_riscv_register(
 		.o_register_q		(PCF				),
 		.i_register_d		(PCFF				),
-		.i_register_en		(1'b1				),
-		.i_clk				(i_clk		),
-		.i_rstn				(i_rstn		)
+		.i_register_en		(StallF				),
+		.i_clk				(i_clk				),
+		.i_rstn				(i_rstn				)
 	);
 
 	riscv_mux

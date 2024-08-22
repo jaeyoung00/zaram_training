@@ -6,31 +6,29 @@
 `endif
 
 module pipe_datapath_Decode
-#(
-	parameter 	REGISTER_INIT = 0
-)
 (
 	output 					o_dp_RegWriteD,
-	output 		  [1:0]		o_dp_ResultSrcD,
+	output 		  			o_dp_ResultSrcD,
 	output 					o_dp_MemWriteD,
-	output 					o_dp_JumpD,
+	output 		[1:0]			o_dp_JumpD,
 	output 					o_dp_BranchD,
-	output  	  [2:0]		o_dp_ALUControlD,
+	output  	  [3:0]		o_dp_ALUControlD,
 	output 					o_dp_ALUSrcD,
+	output 		  [3:0]		o_dp_mem_byte_sel,
+	output 		  [1:0]		o_MUX_selD,
+
 	output 	[`XLEN-1:0]		o_dp_RD1,
 	output 	[`XLEN-1:0]		o_dp_RD2,
 	output 	[`XLEN-1:0]		o_dp_ImmExtD,
-	output 		  [2:0]		o_dp_ctrl_funct3,
-	output 		  [3:0]		o_dp_mem_byte_sel,
-	output 		  [1:0]		o_MUX_selD,
 	output 		  [4:0]		o_dp_Rs1D,
 	output 	   	  [4:0]		o_dp_Rs2D,
 	output 		  [4:0]		o_dp_RdD,
 	output 		  [2:0]		o_funct3D,
 
-	input 	[`XLEN-1:0]		i_dp_instrD,    // A1, A2, 
+	input 	[`XLEN-1:0]		i_dp_instrD,     
 	input 	[`XLEN-1:0] 	i_dp_dmem_WD3,
 	input 					i_dp_WE3,
+	input 		[4:0]			i_RdW,
 	input 					i_clk,
 	input 					i_rstn
 );
@@ -49,7 +47,7 @@ module pipe_datapath_Decode
 		.i_regfile_rs1_addr	(i_dp_instrD[19:15]	),
 		.i_regfile_rs2_addr	(i_dp_instrD[24:20]	),
 		.i_regfile_rd_data	(i_dp_dmem_WD3		),
-		.i_regfile_rd_addr	(i_dp_instrD[11:7]	),
+		.i_regfile_rd_addr	(i_RdW	),
 		.i_regfile_rd_wen	(i_dp_WE3			),
 		.i_clk				(i_clk				)
 	);
@@ -71,7 +69,7 @@ module pipe_datapath_Decode
 		.o_ctrl_BranchD		(o_dp_BranchD		),
 		.o_ctrl_ALUControlD	(o_dp_ALUControlD	),
 		.o_ctrl_ALUSrcD		(o_dp_ALUSrcD		),
-		.o_ctrl_ImmSrcD		(dp_ImmSrcD[1:0]	),
+		.o_ctrl_ImmSrcD		(dp_ImmSrcD		),
 		.o_ctrl_mem_byte_sel(o_dp_mem_byte_sel	),
 		.o_ctrl_MUX_selD	(o_MUX_selD			),
 		.i_ctrl_op			(i_dp_instrD[6:0]	),

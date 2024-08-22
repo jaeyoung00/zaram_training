@@ -1,6 +1,5 @@
 `ifndef 	NOINC
 `include 	"../common/riscv_configs.v"
-`include 	"../pipelined/pipe_ctrl.v"
 `endif 
 
 module FF_Decode_Execute
@@ -8,46 +7,47 @@ module FF_Decode_Execute
 	parameter 	REGISTER_INIT = 0
 )
 (
-	output 	reg	[1:0]		MUX_selE,
-	output 	reg 			RegWriteE,
-	output 	reg [1:0]		ResultSrcE,
-	output 	reg				MemWriteE,
-	output 	reg				JumpE,
-	output 	reg				BranchE,
-	output 	reg	[2:0]		ALUContrlE,
-	output 	reg				ALUSrcE,
-	output  reg	[`XLEN-1:0]	RD1E,
-	output  reg [`XLEN-1:0]	RD2E,
-	output  reg [`XLEN-1:0]	PCE,
-	output  reg [`XLEN-1:0]	Rs1E,
-	output  reg [`XLEN-1:0]	Rs2E,
-	output  reg [`XLEN-1:0]	RdE,
-	output  reg [`XLEN-1:0]	ExtImmE,
-	output  reg [`XLEN-1:0]	funct3E,
-	output 	reg [`XLEN-1:0] PCPlus4E, 
+	output 	reg	[1:0]			MUX_selE,
+	output 	reg 				RegWriteE,
+	output 	reg 				ResultSrcE,
+	output 	reg					MemWriteE,
+	output 	reg	[1:0]			JumpE,
+	output 	reg					BranchE,
+	output 	reg	[3:0]			ALUContrlE,
+	output 	reg					ALUSrcE,
+	output 	reg [`XLEN/8-1:0] 	mem_byte_selE,
+	output  reg	[`XLEN-1:0]		RD1E,
+	output  reg [`XLEN-1:0]		RD2E,
+	output  reg [`XLEN-1:0]		PCE,
+	output  reg [4:0]			Rs1E,
+	output  reg [4:0]			Rs2E,
+	output  reg [4:0]			RdE,
+	output  reg [`XLEN-1:0]		ExtImmE,
+	output  reg [2:0]			funct3E,
+	output 	reg [`XLEN-1:0] 	PCPlus4E, 
 
-	input 	 [1:0]			o_ctrl_MUX_selD,
-	input 	 				RegWriteD,
-	input 	 [1:0]	    	ResultSrcD,
-	input 					MemWriteD,
-	input 					JumpD,
-	input 					BranchD,
-	input 	 [2:0]			ALUContrlD,
-	input 					ALUSrcD,
-	input  	[`XLEN-1:0]		RD1,
-	input   [`XLEN-1:0]		RD2,
-	input   [`XLEN-1:0]		PCD,
-	input   [`XLEN-1:0]		Rs1D,
-	input   [`XLEN-1:0]		Rs2D,
-	input   [`XLEN-1:0]		RdD,
-	input   [`XLEN-1:0]		ExtImmD,
-	input 	[`XLEN-1:0]		funct3D,
-	input   [`XLEN-1:0]		PCPlus4D, 
-	input 	[`XLEN-1:0]		InstrD,
+	input 	 [1:0]				o_ctrl_MUX_selD,
+	input 	 					RegWriteD,
+	input 	 		    		ResultSrcD,
+	input 						MemWriteD,
+	input    [1:0]				JumpD,
+	input 						BranchD,
+	input 	 [3:0]				ALUContrlD,
+	input 						ALUSrcD,
+	input 	[`XLEN/8-1:0]		o_dp_mem_byte_sel,
+	input  	[`XLEN-1:0]			RD1,
+	input   [`XLEN-1:0]			RD2,
+	input   [`XLEN-1:0]			PCD,
+	input   [4:0]				Rs1D,
+	input   [4:0]				Rs2D,
+	input   [4:0]				RdD,
+	input   [`XLEN-1:0]			ExtImmD,
+	input 	[2:0]				funct3D,
+	input   [`XLEN-1:0]			PCPlus4D, 
 
-	input 					i_clk,
-	input 					i_rstn,
-	input 					i_FlushE_CLR
+	input 						i_clk,
+	input 						i_rstn,
+	input 						i_FlushE_CLR
 );
 
 	always @(posedge i_clk or negedge i_rstn) begin
@@ -60,6 +60,7 @@ module FF_Decode_Execute
 			BranchE			<= 0;
 			ALUContrlE		<= 0;
 			ALUSrcE			<= 0;
+			mem_byte_selE	<= 0;
 			RD1E			<= 0;
 			RD2E			<= 0;
 			PCE				<= 0;
@@ -79,6 +80,7 @@ module FF_Decode_Execute
                 BranchE			<= BranchD;
                 ALUContrlE		<= ALUContrlD;
                 ALUSrcE			<= ALUSrcD;
+				mem_byte_selE	<= o_dp_mem_byte_sel;
                 RD1E			<= RD1;
                 RD2E			<= RD2;
                 PCE				<= PCD;
@@ -97,6 +99,7 @@ module FF_Decode_Execute
                 BranchE			<= 0;
                 ALUContrlE		<= 0;
                 ALUSrcE			<= 0;
+				mem_byte_selE	<= 0;
                 RD1E			<= 0;
                 RD2E			<= 0;
                 PCE				<= 0;

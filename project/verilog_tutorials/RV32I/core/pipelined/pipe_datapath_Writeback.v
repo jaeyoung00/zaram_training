@@ -9,20 +9,18 @@ module 	pipe_datapath_Writeback
 )
 (
 	output 		[`XLEN-1:0]	o_dp_ResultW,
-	input 		[`XLEN-1:0]	i_dp_ALUResultM,
 	input 		[`XLEN-1:0]	i_dp_ReadDataW,
-	input 		[`XLEN-1:0]	i_dp_PCPlus4W,
-	input 		[1:0]		i_dp_ResultSrcW
+	input 		[`XLEN-1:0]	i_dp_4to1muxW,
+	input 					i_dp_ResultSrcW
 );
 
-	wire 		[`XLEN-1:0]		i_dp_PCPlusImm;
-	wire 		[(4*`XLEN)-1:0]	mux_concat_rd;
+	wire 		[(2*`XLEN)-1:0]	mux_concat_rd;
 
-	assign 		mux_concat_rd	= {i_dp_ALUResultM, i_dp_ReadDataW, i_dp_PCPlus4W, i_dp_PCPlusImm};
+	assign 		mux_concat_rd	= {i_dp_4to1muxW, i_dp_ReadDataW};
 	
 	riscv_mux
 	#(
-		.N_MUX_IN			(4			)
+		.N_MUX_IN			(2			)
 	)
 	u_riscv_mux(
 		.o_mux_data			(o_dp_ResultW		),

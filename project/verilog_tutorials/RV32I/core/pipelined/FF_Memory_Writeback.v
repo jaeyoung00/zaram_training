@@ -8,18 +8,16 @@ module FF_Memory_Writeback
 )
 (
 	output reg 				RegWriteW,
-	output reg		  [1:0]	ResultSrcW,
+	output reg		  		ResultSrcW,
 	output reg 	[`XLEN-1:0]	ReadDataW,
 	output reg 	[`XLEN-1:0]	o_dp_4to1muxW,
-	output reg 	[`XLEN-1:0]	RdW,
-	output reg 	[`XLEN-1:0]	PCPlus4W,
+	output reg 	[4:0]		RdW,
 
 	input 		    		RegWriteM,
-	input 		[1:0]		ResultSrcM,
+	input 					ResultSrcM,
 	input 		[`XLEN-1:0]	o_dp_dmem_RD,
 	input 		[`XLEN-1:0]	o_dp_4to1muxM,
-	input 		[`XLEN-1:0]	RdM,
-	input 		[`XLEN-1:0]	PCPlus4M,
+	input 		[4:0]		RdM,
 
 	input 					i_clk,
 	input 					i_rstn
@@ -32,14 +30,12 @@ module FF_Memory_Writeback
 			ReadDataW   	<= 0;
 			o_dp_4to1muxW	<= 0;
 			RdW         	<= 0;
-			PCPlus4W    	<= 0;
 		end else begin
 			RegWriteW		<= RegWriteM;
 			ResultSrcW  	<= ResultSrcM;
 			ReadDataW   	<= o_dp_dmem_RD;
 			o_dp_4to1muxW	<= o_dp_4to1muxM;
 			RdW         	<= RdM;
-			PCPlus4W    	<= PCPlus4M;
 		end 
 	end 
 endmodule
