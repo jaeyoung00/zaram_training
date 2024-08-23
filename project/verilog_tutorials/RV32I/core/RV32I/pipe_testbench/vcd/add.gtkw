@@ -1,0 +1,73 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Fri Aug 23 08:35:44 2024
+[*]
+[dumpfile] "/home/jylee/verilog_tutorials/RV32I/pipe_testbench/vcd/add.vcd"
+[dumpfile_mtime] "Fri Aug 23 07:53:59 2024"
+[dumpfile_size] 1116799
+[savefile] "/home/jylee/verilog_tutorials/RV32I/pipe_testbench/vcd/add.gtkw"
+[timestart] 3
+[size] 1920 1129
+[pos] 0 162
+*-2.000000 13 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] TOP.
+[treeopen] TOP.riscv_top.
+[treeopen] TOP.riscv_top.u_pipe_datapath_Decode.
+[treeopen] TOP.riscv_top.u_pipe_datapath_Execute.
+[treeopen] TOP.riscv_top.u_pipe_datapath_Fetch.
+[sst_width] 309
+[signals_width] 331
+[sst_expanded] 1
+[sst_vpaned_height] 337
+@28
+TOP.riscv_top.u_pipe_datapath_Fetch.i_clk
+TOP.riscv_top.u_pipe_datapath_Fetch.i_rstn
+@22
+TOP.riscv_top.u_pipe_datapath_Fetch.PCF[31:0]
+TOP.riscv_top.u_pipe_datapath_Fetch.dp_PCPlus4F[31:0]
+TOP.riscv_top.u_pipe_datapath_Fetch.o_dp_PCPlus4F[31:0]
+@28
+TOP.riscv_top.u_pipe_datapath_Fetch.o_dp_imem_RD[31:0]
+TOP.riscv_top.u_pipe_datapath_Fetch.i_PCSrcE[1:0]
+@820
+TOP.riscv_top.u_pipe_datapath_Decode.u_pipe_ctrl.DEBUG_INSTR[255:0]
+@28
+TOP.riscv_top.u_hazard_unit.StallD
+TOP.riscv_top.u_hazard_unit.StallF
+TOP.riscv_top.u_hazard_unit.FlushD
+TOP.riscv_top.u_hazard_unit.FlushE
+@22
+TOP.riscv_top.u_FF_Fetch_Decode.o_PCPlus4D[31:0]
+TOP.riscv_top.u_pipe_datapath_Execute.i_dp_RD1E[31:0]
+TOP.riscv_top.u_pipe_datapath_Execute.i_dp_RD2E[31:0]
+TOP.riscv_top.u_pipe_datapath_Execute.o_dp_ALU[31:0]
+@28
+TOP.riscv_top.u_pipe_datapath_Execute.take_branch
+@22
+TOP.riscv_top.u_pipe_datapath_Decode.o_dp_Rs1D[4:0]
+TOP.riscv_top.u_pipe_datapath_Decode.o_dp_Rs2D[4:0]
+TOP.riscv_top.u_pipe_datapath_Fetch.PCFF[31:0]
+TOP.riscv_top.u_pipe_datapath_Fetch.u_riscv_adder.i_adder_a[31:0]
+TOP.riscv_top.u_pipe_datapath_Fetch.u_riscv_adder.i_adder_b[31:0]
+TOP.riscv_top.u_pipe_datapath_Fetch.u_riscv_adder.o_adder_sum[31:0]
+TOP.riscv_top.u_pipe_datapath_Decode.u_riscv_immext.i_imm_instr[31:0]
+@28
+TOP.riscv_top.u_pipe_datapath_Decode.u_riscv_immext.i_imm_src[2:0]
+@22
+TOP.riscv_top.u_pipe_datapath_Decode.u_riscv_immext.o_imm_ext[31:0]
+@28
+TOP.riscv_top.u_pipe_datapath_Decode.o_funct3D[2:0]
+@22
+TOP.o_riscv_dmem_addr[31:0]
+TOP.o_riscv_dmem_byte_sel[3:0]
+TOP.o_riscv_dmem_rd_data[31:0]
+TOP.o_riscv_dmem_wr_data[31:0]
+@28
+TOP.o_riscv_dmem_wr_en
+@22
+TOP.o_riscv_imem_instr[31:0]
+TOP.o_riscv_imem_pc[31:0]
+@23
+TOP.riscv_top.u_pipe_datapath_Fetch.o_dp_PCF[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -19,8 +19,9 @@ module riscv_alu
 			`ALU_CTRL_SLL 	: 	o_alu_result = i_alu_a << i_alu_b[4:0];
 			`ALU_CTRL_SRL 	: 	o_alu_result = i_alu_a >> i_alu_b[4:0];
 			`ALU_CTRL_SRA 	: 	o_alu_result = $signed(i_alu_a) >>> $signed(i_alu_b[4:0]);
-			`ALU_CTRL_SLT 	: 	o_alu_result = $signed(i_alu_a) < $signed(i_alu_b);
-			`ALU_CTRL_SLTU 	: 	o_alu_result = i_alu_a < i_alu_b;
+			`ALU_CTRL_SLT 	: 	o_alu_result = ($signed(i_alu_a) < $signed(i_alu_b)) ? `XLEN'd1 : `XLEN'd0;
+			`ALU_CTRL_SLTU 	: 	o_alu_result = (i_alu_a < i_alu_b) ? `XLEN'd1 : `XLEN'd0;
+			default 		: 	o_alu_result = `XLEN'dx;
 		endcase 
 	end 
 

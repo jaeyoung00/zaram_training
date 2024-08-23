@@ -42,7 +42,7 @@ module pipe_datapath_Fetch
 	riscv_imem
 	u_riscv_imem(
 		.o_imem_data		(o_dp_imem_RD		),
-		.i_imem_addr		(PCF[`IMEM_ADDR_BIT:2]),
+		.i_imem_addr		(PCF[`IMEM_ADDR_BIT-1:2]),
 		.i_clk				(i_clk				)
 	);
 

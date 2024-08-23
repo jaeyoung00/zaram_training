@@ -4,10 +4,10 @@
 
 module hazard_unit
 (
-	output reg	[1:0]		StallF,
-	output reg	[1:0]		StallD,
-	output reg	[1:0]		FlushD,
-	output reg	[1:0]		FlushE,
+	output reg			StallF,
+	output reg			StallD,
+	output reg			FlushD,
+	output reg			FlushE,
 	output reg [1:0]	ForwardAE,
 	output reg [1:0]	ForwardBE,
 	input	   [4:0]	Rs1D,
@@ -19,7 +19,7 @@ module hazard_unit
 	input				RegWriteM,
 	input	   [4:0]	RdW,
 	input				RegWriteW,
-	input		[1:0]	ResultSrcE,
+	input				ResultSrcE,
 	input		[1:0]		PCSrcE
 );
 
@@ -44,30 +44,35 @@ module hazard_unit
 	end
 	
 	// lw stall
-	wire [1:0]	lwStall;
- 	assign	lwStall = (((Rs1D == RdE) || (Rs2D == RdE)) & ResultSrcE);
+	wire 	lwStall;
+ 	assign	lwStall = (((Rs1D == RdE) || (Rs2D == RdE)) & !ResultSrcE);
 	always @(*) begin	
-		if (lwStall == 2'b1) begin  
-			StallF = 2'b1;
-			StallD = 2'b1;
-			FlushE = 2'b1;
+		if (lwStall) begin  
+			StallF = 1'b1;
+			StallD = 1'b1;
+			FlushE = 1'b1;
 		end 
 		else begin
-			StallF = 2'b0;
-			StallD = 2'b0;
-			FlushE = 2'b0;
+			StallF = 1'b0;
+			StallD = 1'b0;
+			FlushE = 1'b0;
 		end
 	end 
 
 	// Branch Flush
 	always @(*) begin 
-		if(PCSrcE == 2'b1)
-			FlushD = 2'b1;   // CLR o
+		if((PCSrcE == 2'b01) || (PCSrcE == 2'b10))
+			FlushD = 1'b1;   // CLR o
+			FlushE = 1'b1;   // CLR o
 	end 
-
 	always @(*) begin 
-		if((PCSrcE | lwStall) == 2'b1)
-			FlushE = 2'b1;   // CLR o
+		if(PCSrcE != 2'b00) begin 
+			FlushD = 1'b1;   // CLR o
+			FlushE = 1'b1;   // CLR o
+		end else begin
+			FlushD = 1'b0;
+			FlushE = 1'b0;
+		end 
 	end 
 
 endmodule 

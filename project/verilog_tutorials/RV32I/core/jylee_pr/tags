@@ -1,0 +1,137 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/jylee/zaram_training/project/verilog_tutorials/RV32I/core/jylee_pr/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+CLKFREQ	top_tb.v	/^`define CLKFREQ 	100$/;"	c
+DEBUG	top_tb.v	/^`define DEBUG$/;"	c
+DEBUG_INSTR	riscv_ctrl.v	/^		reg [8*32-1:0] DEBUG_INSTR;$/;"	r	module:riscv_ctrl
+IMEM_INIT	top_tb.v	/^`define IMEM_INIT$/;"	c
+IMEM_INIT_FILE	top_tb.v	/^`define IMEM_INIT_FILE "\/home\/jylee\/zaram_training\/project\/verilog_tutorials\/RV32I\/core\//;"	c
+NOINC	top_tb.v	/^`define NOINC	$/;"	c
+NVEC	top_tb.v	/^`define NVEC		100$/;"	c
+REGISTER_INIT	cpu.v	/^	parameter REGISTER_INIT 	= 0$/;"	c	module:cpu
+REGISTER_INIT	riscv_datapath.v	/^	parameter 	REGISTER_INIT 	= 0$/;"	c	module:riscv_datapath
+REGISTER_INIT	top.v	/^	parameter REGISTER_INIT = 0$/;"	c	module:top
+SIMCYCLE	top_tb.v	/^`define SIMCYCLE	`NVEC$/;"	c
+alu_a	riscv_datapath.v	/^	wire 	[`XLEN-1:0]	alu_a;$/;"	n	module:riscv_datapath
+alu_b	riscv_datapath.v	/^	wire 	[`XLEN-1:0] alu_b;$/;"	n	module:riscv_datapath
+alu_ctrl	cpu.v	/^	wire [3:0]			alu_ctrl;$/;"	n	module:cpu
+alu_result	riscv_datapath.v	/^	wire 	[`XLEN-1:0]	alu_result;$/;"	n	module:riscv_datapath
+alu_zero	cpu.v	/^	wire 				alu_zero;$/;"	n	module:cpu
+cpu	cpu.v	/^module cpu$/;"	m
+dmem_addr	cpu.v	/^	wire [`XLEN-1:0]	dmem_addr;$/;"	n	module:cpu
+dmem_byte_sel	cpu.v	/^	wire 	   [3:0]	dmem_byte_sel;$/;"	n	module:cpu
+dmem_rd_data	cpu.v	/^	wire [`XLEN-1:0]	dmem_rd_data;$/;"	n	module:cpu
+dmem_wen	cpu.v	/^	wire 				dmem_wen;$/;"	n	module:cpu
+dmem_wr_data	cpu.v	/^	wire [`XLEN-1:0]	dmem_wr_data;$/;"	n	module:cpu
+err	top_tb.v	/^	integer 			err = 0;$/;"	r	module:top_tb
+i	top_tb.v	/^		input  [9:0]	 i;$/;"	p	task:top_tb.resetNCycle
+i	top_tb.v	/^	integer 	i, j;$/;"	r	module:top_tb
+i_clk	cpu.v	/^	input 				i_clk,$/;"	p	module:cpu
+i_clk	riscv_datapath.v	/^	input 				i_clk,$/;"	p	module:riscv_datapath
+i_clk	top.v	/^	input 					i_clk,$/;"	p	module:top
+i_clk	top_tb.v	/^	reg 					i_clk;$/;"	r	module:top_tb
+i_cpu_dmem_rd_data	cpu.v	/^	input 	[`XLEN-1:0] i_cpu_dmem_rd_data,$/;"	p	module:cpu
+i_cpu_imem_instr	cpu.v	/^	input 	[`XLEN-1:0]	i_cpu_imem_instr,$/;"	p	module:cpu
+i_ctrl_alu_zero	riscv_ctrl.v	/^	input			     i_ctrl_alu_zero,$/;"	p	module:riscv_ctrl
+i_ctrl_funct3	riscv_ctrl.v	/^	input		[2:0]	 i_ctrl_funct3,$/;"	p	module:riscv_ctrl
+i_ctrl_funct7_5b	riscv_ctrl.v	/^	input			 	 i_ctrl_funct7_5b$/;"	p	module:riscv_ctrl
+i_ctrl_opcode	riscv_ctrl.v	/^	input		[6:0]	 i_ctrl_opcode,$/;"	p	module:riscv_ctrl
+i_dp_alu_ctrl	riscv_datapath.v	/^	input 		  [3:0]	i_dp_alu_ctrl,$/;"	p	module:riscv_datapath
+i_dp_instr	riscv_datapath.v	/^	input 	[`XLEN-1:0]	i_dp_instr,$/;"	p	module:riscv_datapath
+i_dp_mem_rd_data	riscv_datapath.v	/^	input 	[`XLEN-1:0] i_dp_mem_rd_data,$/;"	p	module:riscv_datapath
+i_dp_reg_wr_en	riscv_datapath.v	/^	input 				i_dp_reg_wr_en,$/;"	p	module:riscv_datapath
+i_dp_src_alu_a	riscv_datapath.v	/^	input 				i_dp_src_alu_a,$/;"	p	module:riscv_datapath
+i_dp_src_alu_b	riscv_datapath.v	/^	input 				i_dp_src_alu_b,$/;"	p	module:riscv_datapath
+i_dp_src_imm	riscv_datapath.v	/^	input 		  [2:0]	i_dp_src_imm,$/;"	p	module:riscv_datapath
+i_dp_src_pc	riscv_datapath.v	/^	input 		  [1:0]	i_dp_src_pc,$/;"	p	module:riscv_datapath
+i_dp_src_rd	riscv_datapath.v	/^	input 		  [1:0]	i_dp_src_rd,$/;"	p	module:riscv_datapath
+i_rstn	cpu.v	/^	input 				i_rstn$/;"	p	module:cpu
+i_rstn	riscv_datapath.v	/^	input 				i_rstn$/;"	p	module:riscv_datapath
+i_rstn	top.v	/^	input 					i_rstn$/;"	p	module:top
+i_rstn	top_tb.v	/^	reg 					i_rstn;$/;"	r	module:top_tb
+immediate	riscv_datapath.v	/^	wire 	[`XLEN-1:0]	immediate;$/;"	n	module:riscv_datapath
+init	top_tb.v	/^	task init;$/;"	t	module:top_tb
+j	top_tb.v	/^	integer 	i, j;$/;"	r	module:top_tb
+mem_byte_sel	cpu.v	/^	wire 				mem_byte_sel;$/;"	n	module:cpu
+mem_wr_en	cpu.v	/^	wire 				mem_wr_en;$/;"	n	module:cpu
+mux_concat_alu_a	riscv_datapath.v	/^	wire 	[(2*`XLEN)-1:0] mux_concat_alu_a;$/;"	n	module:riscv_datapath
+mux_concat_alu_b	riscv_datapath.v	/^	wire 	[(2*`XLEN)-1:0] mux_concat_alu_b;$/;"	n	module:riscv_datapath
+mux_concat_pc	riscv_datapath.v	/^	wire 	[(3*`XLEN)-1:0] mux_concat_pc;$/;"	n	module:riscv_datapath
+mux_concat_rd	riscv_datapath.v	/^	wire 	[(4*`XLEN)-1:0] mux_concat_rd;$/;"	n	module:riscv_datapath
+o_cpu_dmem_addr	cpu.v	/^	output  [`XLEN-1:0]	o_cpu_dmem_addr,$/;"	p	module:cpu
+o_cpu_dmem_byte_sel	cpu.v	/^	output 		  [3:0] o_cpu_dmem_byte_sel,	$/;"	p	module:cpu
+o_cpu_dmem_wen	cpu.v	/^	output 				o_cpu_dmem_wen,$/;"	p	module:cpu
+o_cpu_dmem_wr_data	cpu.v	/^	output 	[`XLEN-1:0] o_cpu_dmem_wr_data,$/;"	p	module:cpu
+o_cpu_imem_pc	cpu.v	/^	output	[`XLEN-1:0]	o_cpu_imem_pc,$/;"	p	module:cpu
+o_ctrl_alu_ctrl	riscv_ctrl.v	/^	output reg	[3:0]	 o_ctrl_alu_ctrl,$/;"	p	module:riscv_ctrl
+o_ctrl_mem_byte_sel	riscv_ctrl.v	/^	output reg	[3:0]	 o_ctrl_mem_byte_sel,$/;"	p	module:riscv_ctrl
+o_ctrl_mem_wr_en	riscv_ctrl.v	/^	output reg		 	 o_ctrl_mem_wr_en,$/;"	p	module:riscv_ctrl
+o_ctrl_reg_wr_en	riscv_ctrl.v	/^	output reg		   	 o_ctrl_reg_wr_en,$/;"	p	module:riscv_ctrl
+o_ctrl_src_alu_a	riscv_ctrl.v	/^	output reg			 o_ctrl_src_alu_a,$/;"	p	module:riscv_ctrl
+o_ctrl_src_alu_b	riscv_ctrl.v	/^	output reg		 	 o_ctrl_src_alu_b,$/;"	p	module:riscv_ctrl
+o_ctrl_src_imm	riscv_ctrl.v	/^	output reg	[2:0]	 o_ctrl_src_imm,$/;"	p	module:riscv_ctrl
+o_ctrl_src_pc	riscv_ctrl.v	/^	output reg  [1:0]	 o_ctrl_src_pc,$/;"	p	module:riscv_ctrl
+o_ctrl_src_rd	riscv_ctrl.v	/^	output reg	[1:0]	 o_ctrl_src_rd,$/;"	p	module:riscv_ctrl
+o_dp_alu_zero	riscv_datapath.v	/^	output 				o_dp_alu_zero,$/;"	p	module:riscv_datapath
+o_dp_mem_addr	riscv_datapath.v	/^	output 	[`XLEN-1:0] o_dp_mem_addr,$/;"	p	module:riscv_datapath
+o_dp_mem_wr_data	riscv_datapath.v	/^	output 	[`XLEN-1:0] o_dp_mem_wr_data,$/;"	p	module:riscv_datapath
+o_dp_pc	riscv_datapath.v	/^	output 	[`XLEN-1:0]	o_dp_pc,$/;"	p	module:riscv_datapath
+o_riscv_dmem_addr	top.v	/^	output	[`XLEN-1:0]		o_riscv_dmem_addr,$/;"	p	module:top
+o_riscv_dmem_addr	top_tb.v	/^	wire	[`XLEN-1:0]		o_riscv_dmem_addr;$/;"	n	module:top_tb
+o_riscv_dmem_byte_sel	top.v	/^	output 		  [3:0]		o_riscv_dmem_byte_sel,$/;"	p	module:top
+o_riscv_dmem_byte_sel	top_tb.v	/^	wire 		  [3:0]		o_riscv_dmem_byte_sel;$/;"	n	module:top_tb
+o_riscv_dmem_rd_data	top.v	/^	output  [`XLEN-1:0]		o_riscv_dmem_rd_data,$/;"	p	module:top
+o_riscv_dmem_rd_data	top_tb.v	/^	wire  	[`XLEN-1:0]		o_riscv_dmem_rd_data;$/;"	n	module:top_tb
+o_riscv_dmem_wr_data	top.v	/^	output 	[`XLEN-1:0]		o_riscv_dmem_wr_data,$/;"	p	module:top
+o_riscv_dmem_wr_data	top_tb.v	/^	wire 	[`XLEN-1:0]		o_riscv_dmem_wr_data;$/;"	n	module:top_tb
+o_riscv_dmem_wr_en	top.v	/^	output 					o_riscv_dmem_wr_en,$/;"	p	module:top
+o_riscv_dmem_wr_en	top_tb.v	/^	wire 					o_riscv_dmem_wr_en;$/;"	n	module:top_tb
+o_riscv_imem_instr	top.v	/^	output 	[`XLEN-1:0]		o_riscv_imem_instr,$/;"	p	module:top
+o_riscv_imem_instr	top_tb.v	/^	wire 	[`XLEN-1:0]		o_riscv_imem_instr;$/;"	n	module:top_tb
+o_riscv_imem_pc	top.v	/^	output 	[`XLEN-1:0]		o_riscv_imem_pc,$/;"	p	module:top
+o_riscv_imem_pc	top_tb.v	/^	wire 	[`XLEN-1:0]		o_riscv_imem_pc;$/;"	n	module:top_tb
+pc_next	riscv_datapath.v	/^	wire 	[`XLEN-1:0]	pc_next;$/;"	n	module:riscv_datapath
+pc_plus_4	riscv_datapath.v	/^	wire 	[`XLEN-1:0] pc_plus_4;$/;"	n	module:riscv_datapath
+pc_plus_imm	riscv_datapath.v	/^	wire 	[`XLEN-1:0]	pc_plus_imm;$/;"	n	module:riscv_datapath
+reg_rd_data	riscv_datapath.v	/^	wire 	[`XLEN-1:0] reg_rd_data;$/;"	n	module:riscv_datapath
+reg_rs1_data	riscv_datapath.v	/^	wire 	[`XLEN-1:0]	reg_rs1_data;$/;"	n	module:riscv_datapath
+reg_rs2_data	riscv_datapath.v	/^	wire 	[`XLEN-1:0]	reg_rs2_data;$/;"	n	module:riscv_datapath
+reg_wr_en	cpu.v	/^	wire 				reg_wr_en;$/;"	n	module:cpu
+resetNCycle	top_tb.v	/^	task resetNCycle;$/;"	t	module:top_tb
+riscv_ctrl	riscv_ctrl.v	/^module riscv_ctrl$/;"	m
+riscv_datapath	riscv_datapath.v	/^module riscv_datapath$/;"	m
+src_alu_a	cpu.v	/^	wire 				src_alu_a;$/;"	n	module:cpu
+src_alu_b	cpu.v	/^	wire 				src_alu_b;$/;"	n	module:cpu
+src_imm	cpu.v	/^	wire [2:0]			src_imm;$/;"	n	module:cpu
+src_pc	cpu.v	/^	wire [1:0]			src_pc;$/;"	n	module:cpu
+src_rd	cpu.v	/^	wire [1:0]			src_rd;$/;"	n	module:cpu
+take_branch	riscv_ctrl.v	/^	reg 				take_branch;$/;"	r	module:riscv_ctrl
+taskState	top_tb.v	/^	reg 	[8*32-1:0]	taskState;$/;"	r	module:top_tb
+top	top.v	/^module top$/;"	m
+top_tb	top_tb.v	/^module top_tb;$/;"	m
+u_cpu	top.v	/^	u_cpu($/;"	i	module:top
+u_riscv_adder_pc_4	riscv_datapath.v	/^	u_riscv_adder_pc_4($/;"	i	module:riscv_datapath
+u_riscv_adder_pc_imm	riscv_datapath.v	/^	u_riscv_adder_pc_imm($/;"	i	module:riscv_datapath
+u_riscv_alu	riscv_datapath.v	/^	u_riscv_alu($/;"	i	module:riscv_datapath
+u_riscv_ctrl	cpu.v	/^	u_riscv_ctrl($/;"	i	module:cpu
+u_riscv_datapath	cpu.v	/^	u_riscv_datapath($/;"	i	module:cpu
+u_riscv_dmem	top.v	/^	u_riscv_dmem($/;"	i	module:top
+u_riscv_dmem_interface	cpu.v	/^	u_riscv_dmem_interface($/;"	i	module:cpu
+u_riscv_imem	top.v	/^	u_riscv_imem($/;"	i	module:top
+u_riscv_immext	riscv_datapath.v	/^	u_riscv_immext($/;"	i	module:riscv_datapath
+u_riscv_mux_alu_a	riscv_datapath.v	/^	u_riscv_mux_alu_a($/;"	i	module:riscv_datapath
+u_riscv_mux_alu_b	riscv_datapath.v	/^	u_riscv_mux_alu_b($/;"	i	module:riscv_datapath
+u_riscv_mux_pc_next	riscv_datapath.v	/^	u_riscv_mux_pc_next($/;"	i	module:riscv_datapath
+u_riscv_mux_rd	riscv_datapath.v	/^	u_riscv_mux_rd($/;"	i	module:riscv_datapath
+u_riscv_regfile	riscv_datapath.v	/^	u_riscv_regfile($/;"	i	module:riscv_datapath
+u_riscv_register	riscv_datapath.v	/^	u_riscv_register($/;"	i	module:riscv_datapath
+u_top	top_tb.v	/^	u_top($/;"	i	module:top_tb
+vcd_file	top_tb.v	/^	reg [8*32-1:0]	vcd_file;$/;"	r	module:top_tb

@@ -3,12 +3,12 @@
 //---------------------------------------------------
 
 `define XLEN		    32
-`define DMEM_ADDR_BIT	8
-`define IMEM_ADDR_BIT	8
+`define DMEM_ADDR_BIT	16
+`define IMEM_ADDR_BIT	16
 
-//`define DMEM_INIT
+`define DMEM_INIT
 //`define DMEM_INIT_FILE	"riscv_dmem.mif"
-//`define IMEM_INIT
+`define IMEM_INIT
 //`define IMEM_INIT_FILE	"riscv_imem.mif"
 
 //---------------------------------------------------
@@ -36,6 +36,7 @@
 `define ALU_CTRL_SRA 	4'b1101
 `define ALU_CTRL_SLT 	4'b0010
 `define ALU_CTRL_SLTU	4'b0011
+`define ALU_CTRL_NOP	4'b1111
 
 //---------------------------------------------------
 // Instruction opcodes 
